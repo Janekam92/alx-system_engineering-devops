@@ -1,2 +1,4 @@
-#!bin/bash
-head -n 3 iacta | tail -n 1
+#!/bin/bash
+file_content=$(cat iacta)
+IFS=$'\n' read -d '' -ra lines <<< "$file_content"
+echo "${lines[2]}"
